@@ -54,7 +54,7 @@
     import shopcart from 'components/shopcart/shopcart'
     import cartcontrol from 'components/cartcontrol/cartcontrol'
     import food from 'components/food/food'
-
+    const debug = process.env.NODE_ENV !== 'production'
     const ERR_OK = 0;
 
     export default {
@@ -97,7 +97,8 @@
       },
       created(){
         this.classMap = ['decrease','discount','special','invoice','guarantee'];
-        this.$http.get('/api/goods').then((response) => {
+        const url = debug ? '/api/goods' : 'http://39.105.52.64/sell/api/goods'
+        this.$http.get(url).then((response) => {
           response = response.body;
           if(response.errno === ERR_OK){
             this.goods = response.data;

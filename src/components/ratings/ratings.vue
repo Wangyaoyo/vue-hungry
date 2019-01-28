@@ -59,7 +59,7 @@
     import ratingselect from 'components/ratingselect/ratingselect';
     import split from 'components/split/split';
     import {formatDate} from 'common/js/date';
-
+    const debug = process.env.NODE_ENV !== 'production'
     const POSITIVE = 0;
     const NEGATIVE = 1;
     const ALL = 2;
@@ -71,7 +71,8 @@
         }
       },
       created(){
-        this.$http.get('/api/ratings').then((response) => {
+        const url = debug ? '/api/ratings': 'http://39.105.52.64/sell/api/ratings'
+        this.$http.get(url).then((response) => {
           response = response.body;
           if(response.errno === ERR_OK){
             this.ratings = response.data;

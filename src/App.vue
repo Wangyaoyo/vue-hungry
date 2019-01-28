@@ -22,6 +22,7 @@
 <script type="text/ecmascript-6">
   import header from 'components/header/header.vue';
   const ERR_OK = 0;
+  const debug = process.env.NODE_ENV !== 'production'
   export default {
     data() {
       return {
@@ -29,7 +30,8 @@
       };
     },
     created() {
-      this.$http.get('/api/seller').then((response) => {
+      const url = debug ? '/api/seller' : 'http://39.105.52.64/sell/api/seller'
+      this.$http.get(url).then((response) => {
         response = response.body;
         if(response.errno === ERR_OK){
           this.seller = response.data;
