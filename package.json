@@ -5,7 +5,6 @@
   "author": "wangyao <yaowang@travelsky.com>",
   "private": true,
   "scripts": {
-    /* 配置一个可选的本地开发服务器，基于node.js构建*/
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
