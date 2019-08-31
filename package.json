@@ -2,7 +2,7 @@
   "name": "vueplaylist",
   "version": "1.0.0",
   "description": "Vue 基础知识",
-  "author": "wangyao <yaowang@travelsky.com>",
+  "author": "yaoxxxyao",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
