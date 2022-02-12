@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "ajv": "^6.5.5",
+    "ajv": "^6.12.3",
     "better-scroll": "^0.1.15",
     "stylus": "^0.54.5",
     "vue": "^2.5.2",
